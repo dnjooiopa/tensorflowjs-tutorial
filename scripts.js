@@ -7,7 +7,7 @@ async function run() {
     const dataTrain = {
         x: trainData.x,
         y: trainData.y,
-        name: "trainData",
+        name: "train data",
         mode: "markers",
         type: "scatter"
     };
@@ -47,10 +47,10 @@ async function run() {
     const trainY = tf.tensor(trainData.y);
 
     await model.fit(trainX, trainY, {
-        epochs: 100
+        epochs: 50
     });
 
-    const xpred = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    const xpred = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
     const ypred = model
         .predict(tf.tensor(xpred))
         .flatten()
@@ -66,7 +66,7 @@ async function run() {
 
     Plotly.newPlot("dataPredict", [dataTrain, dataPredict], {
         width: 700,
-        title: "Simple linear regression",
+        title: "Simple linear regression (after train)",
         xaxis: {
             zeroline: true
         }
