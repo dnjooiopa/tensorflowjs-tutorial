@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@tensorflow/tfjs-node": "1.5.1",
-    "nodeplotlib": "^0.6.5"
-  }
-}
